@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net35;net45;net472</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net472</TargetFrameworks>
     <Platforms>AnyCPU;x64;x86</Platforms>
     <PackageId>Open.Nat</PackageId>
     <Authors>Alan McGovern, Ben Motmans, Lucas Ontivero</Authors>
