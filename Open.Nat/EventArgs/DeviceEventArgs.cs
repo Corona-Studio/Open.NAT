@@ -26,15 +26,17 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
+using System;
+
 namespace Open.Nat
 {
-	internal class DeviceEventArgs : System.EventArgs
-	{
-		public DeviceEventArgs(NatDevice device)
-		{
-			Device = device;
-		}
+    internal class DeviceEventArgs : EventArgs
+    {
+        public DeviceEventArgs(NatDevice device)
+        {
+            Device = device;
+        }
 
-		public NatDevice Device { get; private set; }
-	}
+        public NatDevice Device { get; }
+    }
 }

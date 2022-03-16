@@ -23,15 +23,16 @@
 // OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
+
 namespace Open.Nat
 {
-	sealed class Finalizer 
-	{
-		~Finalizer() 
-		{
-			NatDiscoverer.TraceSource.LogInfo("Closing ports opened in this session");
-			NatDiscoverer.RenewTimer.Dispose();
-			NatDiscoverer.ReleaseSessionMappings();
-		}
-	}
+    internal sealed class Finalizer
+    {
+        ~Finalizer()
+        {
+            NatDiscoverer.TraceSource.LogInfo("Closing ports opened in this session");
+            NatDiscoverer.RenewTimer.Dispose();
+            NatDiscoverer.ReleaseSessionMappings();
+        }
+    }
 }

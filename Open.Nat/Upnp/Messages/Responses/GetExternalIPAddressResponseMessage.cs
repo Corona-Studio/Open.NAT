@@ -36,13 +36,13 @@ namespace Open.Nat
         public GetExternalIPAddressResponseMessage(XmlDocument response, string serviceType)
             : base(response, serviceType, "GetExternalIPAddressResponseMessage")
         {
-            string ip = GetNode().GetXmlElementText("NewExternalIPAddress");
+            var ip = GetNode().GetXmlElementText("NewExternalIPAddress");
 
             IPAddress ipAddr;
             if (IPAddress.TryParse(ip, out ipAddr))
                 ExternalIPAddress = ipAddr;
         }
 
-        public IPAddress ExternalIPAddress { get; private set; }
+        public IPAddress ExternalIPAddress { get; }
     }
 }
