@@ -226,7 +226,7 @@ namespace Open.Nat
             internal set
             {
                 _expiration = value;
-                _lifetime = (int) (_expiration - DateTime.UtcNow).TotalSeconds;
+                _lifetime = (int)(_expiration - DateTime.UtcNow).TotalSeconds;
             }
         }
 

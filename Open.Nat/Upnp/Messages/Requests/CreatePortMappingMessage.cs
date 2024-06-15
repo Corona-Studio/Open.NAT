@@ -48,14 +48,14 @@ namespace Open.Nat
 
             return new Dictionary<string, object>
             {
-                {"NewRemoteHost", remoteHost},
-                {"NewExternalPort", _mapping.PublicPort},
-                {"NewProtocol", _mapping.Protocol == Protocol.Tcp ? "TCP" : "UDP"},
-                {"NewInternalPort", _mapping.PrivatePort},
-                {"NewInternalClient", _mapping.PrivateIP},
-                {"NewEnabled", 1},
-                {"NewPortMappingDescription", _mapping.Description},
-                {"NewLeaseDuration", _mapping.Lifetime}
+                { "NewRemoteHost", remoteHost },
+                { "NewExternalPort", _mapping.PublicPort },
+                { "NewProtocol", _mapping.Protocol == Protocol.Tcp ? "TCP" : "UDP" },
+                { "NewInternalPort", _mapping.PrivatePort },
+                { "NewInternalClient", _mapping.PrivateIP },
+                { "NewEnabled", 1 },
+                { "NewPortMappingDescription", _mapping.Description },
+                { "NewLeaseDuration", _mapping.Lifetime }
             };
         }
     }

@@ -123,7 +123,7 @@ namespace Open.Nat
                 var reader = new StreamReader(stream, Encoding.UTF8);
 
                 var responseBody = contentLength != -1
-                    ? reader.ReadAsMany((int) contentLength)
+                    ? reader.ReadAsMany((int)contentLength)
                     : reader.ReadToEnd();
 
                 var responseXml = GetXmlDocument(responseBody);

@@ -43,7 +43,7 @@ namespace Open.Nat
         {
             return new Dictionary<string, object>
             {
-                {"NewPortMappingIndex", _index}
+                { "NewPortMappingIndex", _index }
             };
         }
     }

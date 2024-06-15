@@ -106,7 +106,7 @@ namespace Open.Nat
             }
 
             // The nat-pmp search message. Must be sent to GatewayIP:53531
-            var buffer = new[] {PmpConstants.Version, PmpConstants.OperationExternalAddressRequest};
+            var buffer = new[] { PmpConstants.Version, PmpConstants.OperationExternalAddressRequest };
             foreach (var gatewayEndpoint in _gatewayLists[client])
             {
                 if (cancelationToken.IsCancellationRequested) return;
@@ -133,7 +133,7 @@ namespace Open.Nat
             if (errorcode != 0)
                 NatDiscoverer.TraceSource.LogError("Non zero error: {0}", errorcode);
 
-            var publicIp = new IPAddress(new[] {response[8], response[9], response[10], response[11]});
+            var publicIp = new IPAddress(new[] { response[8], response[9], response[10], response[11] });
             //NextSearch = DateTime.Now.AddMinutes(5);
 
             _timeout = 250;

@@ -120,7 +120,7 @@ namespace Open.Nat
 
         private bool IsValidClient(Socket socket, IPAddress address)
         {
-            var endpoint = (IPEndPoint) socket.LocalEndPoint;
+            var endpoint = (IPEndPoint)socket.LocalEndPoint;
             if (socket.AddressFamily != address.AddressFamily) return false;
 
             switch (socket.AddressFamily)
@@ -138,7 +138,7 @@ namespace Open.Nat
                         return false;
 
                     socket.SetSocketOption(SocketOptionLevel.IPv6, SocketOptionName.MulticastInterface,
-                        BitConverter.GetBytes((int) endpoint.Address.ScopeId));
+                        BitConverter.GetBytes((int)endpoint.Address.ScopeId));
                     return true;
             }
 
@@ -222,7 +222,7 @@ namespace Open.Nat
             var services = from serviceName in ServiceTypes
                 let serviceUrn = string.Format("urn:schemas-upnp-org:service:{0}", serviceName)
                 where serviceType.ContainsIgnoreCase(serviceUrn)
-                select new {ServiceName = serviceName, ServiceUrn = serviceUrn};
+                select new { ServiceName = serviceName, ServiceUrn = serviceUrn };
 
             return services.Any();
         }

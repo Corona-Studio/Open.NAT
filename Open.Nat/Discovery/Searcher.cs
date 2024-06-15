@@ -98,7 +98,7 @@ namespace Open.Nat
             {
                 if (cancelationToken.IsCancellationRequested) return;
 
-                var localHost = ((IPEndPoint) client.Client.LocalEndPoint).Address;
+                var localHost = ((IPEndPoint)client.Client.LocalEndPoint).Address;
                 var receivedFrom = new IPEndPoint(IPAddress.None, 0);
                 var buffer = client.Receive(ref receivedFrom);
                 var device = AnalyseReceivedResponse(localHost, buffer, receivedFrom);

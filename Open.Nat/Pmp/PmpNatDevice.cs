@@ -172,9 +172,9 @@ namespace Open.Nat
                 mapping.Protocol == Protocol.Tcp ? PmpConstants.OperationCodeTcp : PmpConstants.OperationCodeUdp);
             package.Add(0); //reserved
             package.Add(0); //reserved
-            package.AddRange(BitConverter.GetBytes(IPAddress.HostToNetworkOrder((short) mapping.PrivatePort)));
+            package.AddRange(BitConverter.GetBytes(IPAddress.HostToNetworkOrder((short)mapping.PrivatePort)));
             package.AddRange(
-                BitConverter.GetBytes(create ? IPAddress.HostToNetworkOrder((short) mapping.PublicPort) : (short) 0));
+                BitConverter.GetBytes(create ? IPAddress.HostToNetworkOrder((short)mapping.PublicPort) : (short)0));
             package.AddRange(BitConverter.GetBytes(IPAddress.HostToNetworkOrder(mapping.Lifetime)));
 
             try
@@ -228,7 +228,7 @@ namespace Open.Nat
                 if (data[0] != PmpConstants.Version)
                     continue;
 
-                var opCode = (byte) (data[1] & 127);
+                var opCode = (byte)(data[1] & 127);
 
                 var protocol = Protocol.Tcp;
                 if (opCode == PmpConstants.OperationCodeUdp)
@@ -240,7 +240,7 @@ namespace Open.Nat
                 var privatePort = IPAddress.NetworkToHostOrder(BitConverter.ToInt16(data, 8));
                 var publicPort = IPAddress.NetworkToHostOrder(BitConverter.ToInt16(data, 10));
 
-                var lifetime = (uint) IPAddress.NetworkToHostOrder(BitConverter.ToInt32(data, 12));
+                var lifetime = (uint)IPAddress.NetworkToHostOrder(BitConverter.ToInt32(data, 12));
 
                 if (privatePort < 0 || publicPort < 0 || resultCode != PmpConstants.ResultCodeSuccess)
                 {

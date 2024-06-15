@@ -43,9 +43,9 @@ namespace Open.Nat
         {
             return new Dictionary<string, object>
             {
-                {"NewRemoteHost", string.Empty},
-                {"NewExternalPort", _mapping.PublicPort},
-                {"NewProtocol", _mapping.Protocol == Protocol.Tcp ? "TCP" : "UDP"}
+                { "NewRemoteHost", string.Empty },
+                { "NewExternalPort", _mapping.PublicPort },
+                { "NewProtocol", _mapping.Protocol == Protocol.Tcp ? "TCP" : "UDP" }
             };
         }
     }
